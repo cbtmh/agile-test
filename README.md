@@ -70,5 +70,6 @@ src/
 - TypeScript
 - Vite
 - React Router for navigation
-- API integration with backend services
+
+
 
