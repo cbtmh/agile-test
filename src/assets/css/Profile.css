@@ -1,0 +1,255 @@
+/* --- General Styles --- */
+:root {
+    --primary-bg: #f0f2f5;
+    --secondary-bg: #ffffff;
+    --sidebar-bg: #f8f9fa;
+    --primary-purple: #8a2be2;
+    --light-purple: #c491f2;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --border-color: #e0e0e0;
+    --table-header-bg: #e9ecef;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+}
+
+/* --- Main Layout --- */
+.profile-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.profile-sidebar {
+    width: 250px;
+    background-color: var(--sidebar-bg);
+    padding: 24px 0;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    border-right: 1px solid var(--border-color);
+}
+
+.profile-sidebar-header {
+    padding: 0 24px;
+    margin-bottom: 32px;
+}
+
+.profile-logo {
+    max-width: 40px;
+    height: auto;
+    margin-bottom: 16px;
+}
+
+.profile-user {
+    margin-top: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-user span {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.profile-sidebar-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-nav-link {
+    padding: 12px 24px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.profile-nav-link.profile-active,
+.profile-nav-link:hover {
+    background-color: var(--secondary-bg);
+    color: var(--primary-purple);
+}
+
+.profile-main-content {
+    flex-grow: 1;
+    padding: 32px 48px;
+    background-color: var(--secondary-bg);
+}
+
+/* --- Controls (Button & Filters) --- */
+.profile-content-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.profile-add-new-btn {
+    background-color: var(--primary-purple);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.profile-add-new-btn:hover {
+    background-color: var(--light-purple);
+}
+
+.profile-filters {
+    display: flex;
+    gap: 16px;
+}
+
+.profile-filter-input {
+    padding: 10px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    width: 200px;
+}
+
+.profile-filter-input:focus {
+    border-color: var(--primary-purple);
+}
+
+.profile-tags-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.profile-tags-arrow {
+    position: absolute;
+    right: 12px;
+    color: var(--text-secondary);
+    pointer-events: none;
+}
+
+/* --- Table Styles --- */
+.profile-table-wrapper {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.profile-posts-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.profile-posts-table th,
+.profile-posts-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-posts-table th {
+    background-color: var(--table-header-bg);
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.profile-posts-table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.profile-posts-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.profile-action-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.profile-action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+    border-radius: 4px;
+}
+
+.profile-action-btn:hover {
+    color: var(--primary-purple);
+    background-color: rgba(138, 43, 226, 0.1);
+}
+
+/* --- Pagination --- */
+.profile-pagination {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-pagination-btn {
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.2s;
+}
+
+.profile-pagination-btn:hover {
+    border-color: var(--primary-purple);
+    color: var(--primary-purple);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+    }
+
+    .profile-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .profile-main-content {
+        padding: 24px;
+    }
+
+    .profile-content-controls {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .profile-filters {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .profile-filter-input {
+        width: 100%;
+    }
+
+    .profile-table-wrapper {
+        overflow-x: auto;
+    }
+}

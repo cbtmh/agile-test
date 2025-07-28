@@ -1,0 +1,128 @@
+
+:root {
+    --title-color: #3d2c5e;
+    --text-color: #5a5a72;
+    --primary-accent: #8645FF;
+  }
+  
+  .features-section {
+    font-family: 'Montserrat', sans-serif; 
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color:#F6F9FF;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    color: var(--title-color);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    max-width: 500px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .feature-card {
+    position: relative;
+    padding: 2rem;
+    border-radius: 20px;
+    overflow: hidden; 
+    text-align: left;
+  }
+  
+  .card-bg-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    border-radius: 50px; 
+    clip-path: polygon(40% 0, 100% 0, 100% 100%, 20% 100%);
+  }
+
+  .card-content {
+    position: relative;
+    z-index: 2; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .feature-image-wrapper {
+    flex-shrink: 0;
+  }
+  
+  .feature-image {
+    max-width: 180px;
+    height: auto;
+  }
+  
+  .feature-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .feature-title {
+    font-size: 1.75rem;
+    color: var(--title-color);
+    font-weight: 600;
+    margin: 0 0 0.75rem 0;
+  }
+  
+  .feature-description {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+    font-style: italic;
+  }
+  
+  .learn-more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-accent);
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+  
+  .learn-more-link:hover {
+    transform: translateX(5px);
+  }
+  
+
+  @media (min-width: 768px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 2.5rem;
+    }
+    
+    .card-content {
+      flex-direction: row; 
+      align-items: center;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+      .feature-card {
+          padding: 2.5rem;
+      }
+  }
